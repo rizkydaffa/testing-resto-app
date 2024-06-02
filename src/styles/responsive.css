@@ -1,0 +1,231 @@
+/* Responsiveness adjustments */
+@media only screen and (max-width: 699px) {
+  .nav-container {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  .brand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 10px;
+    animation: slideInLeft 0.5s ease-in-out;
+  }
+  .nav__menu {
+    max-height: 0;
+    overflow: hidden;
+    justify-content: start;
+    transition: max-height 0.4s ease-in-out;
+  }
+  .nav__menu ul {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    animation: slideInUp 0.5s ease-in-out;
+  }
+  .header_menu {
+    font-size: 20px;
+    display: block;
+    animation: bounceIn 0.5s ease-in-out;
+  }
+  .hero-container {
+    background-image: url('../public/images/heros/hero-image_3.jpg');
+    animation: fadeIn 1s ease-in-out;
+  }
+  .main-resto_container {
+    padding: 25px 20px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  .skip2content {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .header_menu {
+    display: none;
+  }
+  section {
+    margin-bottom: 80px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  .main-resto_label {
+    font-size: 26px;
+    animation: fadeInDown 0.5s ease-in-out;
+  }
+  .list-resto {
+    grid-template-columns: 1fr 1fr;
+    animation: fadeInUp 0.5s ease-in-out;
+  }
+  .resto-item_name {
+    font-size: 22px;
+    animation: fadeInLeft 0.5s ease-in-out;
+  }
+  .main-resto_container {
+    padding: 0 30px;
+    animation: fadeInRight 0.5s ease-in-out;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  nav {
+    padding: 0 100px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  .main-resto_container {
+    padding: 0 100px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  .list-resto {
+    grid-template-columns: 1fr 1fr 1fr;
+    animation: fadeInUp 0.5s ease-in-out;
+  }
+  .container-info {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-gap: 1.5em;
+    margin-top: 1em;
+    animation: fadeInDown 0.5s ease-in-out;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .restaurant-detail__info,
+  .restaurant-detail__menu-list,
+  .restaurant-detail__review {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+    gap: 50px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  .detail-review {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  .resto-item_image-container {
+    max-width: 300px;
+    animation: zoomIn 0.5s ease-in-out;
+  }
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
